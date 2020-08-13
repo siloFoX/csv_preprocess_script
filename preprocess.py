@@ -12,6 +12,7 @@ PATH_METADATA = os.environ.get("PATH_METADATA")
 LIST_DROPPED_COLUMNS = os.environ.get("LIST_DROPPED_COLUMNS").split(",")
 PATH_PROCESSED_DATA = os.environ.get("PATH_PROCESSED_DATA")
 
+# 파일 포멧
 FILE_EXT_TSV = ".tsv"
 FILE_EXT_CSV = ".csv"
 
@@ -32,7 +33,7 @@ def check_and_return_file_name () :
     return file_names
 
 
-# 데이터의 차이를 비교
+# 데이터의 차이를 비교 (안 해도 된다고..?)
 def analysis_diff_data (raw_data, transmission_data = None) :
     pass
 
@@ -65,6 +66,7 @@ def drop_columns (data) :
     
     return data.drop(LIST_DROPPED_COLUMNS, axis = 1)
 
+
 # metadata 읽는 모든 과정
 def read_metadata_and_drop () :
 
@@ -88,7 +90,7 @@ def preprocess_data () :
     try : 
         data = read_metadata_and_drop()
 
-        # preprocessing
+        # TODO : preprocessing
         processed_data = data
 
         return processed_data
@@ -101,4 +103,8 @@ def preprocess_data () :
 if __name__ == "__main__" :
 
     data = preprocess_data()
-    write_file(data)
+
+    try : 
+        write_file(data)
+    except Exception("ERROR : Fail write data") as e :
+        print(e)
