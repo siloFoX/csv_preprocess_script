@@ -5,6 +5,13 @@ import numpy as np
 import os
 
 
+# 데이터 여러개?
+# MongoDB 바로 연동?
+# HTTP 로 전송?
+# 전처리 어디까지?
+# 스크립트는 얼마나
+
+
 # 환경변수 받아서 적용
 # 문자열로 받기 때문에 공백문자에 주의 필요
 load_dotenv(verbose = True) # .env 없으면 에러 던짐
