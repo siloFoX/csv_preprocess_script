@@ -4,10 +4,14 @@ import pandas as pd
 import numpy as np
 import os
 
+# json 의 list 를 받아옴
+# 다시 json 형식으로 저장
+# catch 로 "1 " +
+# 노션에 상대경로 저장되는거 적어주긴
 
-# 데이터 여러개?
-# MongoDB 바로 연동?
-# HTTP 로 전송?
+# 데이터 여러개? 그냥 지워버리기
+# MongoDB 바로 연동? X
+# HTTP 로 전송? X
 # 전처리 어디까지?
 # 스크립트는 얼마나
 
